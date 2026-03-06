@@ -4,17 +4,17 @@ import com.main.Main;
 
 public class Controller {
 	
-	public static void IncRoomCount(int n,String s) {
-		int x = Main.map.get(s).getCount();
-		Main.map.get(s).setCount(x+n);
+	public static void IncRoomCount(int noOfRooms,String roomtType) {
+		int x = Main.map.get(roomtType).getCount();
+		Main.map.get(roomtType).setCount(x+noOfRooms);
 	}
-	public static void DecRoomCount(int n,String s) {
-		int x = Main.map.get(s).getCount();
-		Main.map.get(s).setCount(x-n);
+	public static void DecRoomCount(int noOfRooms,String roomtType) {
+		int x = Main.map.get(roomtType).getCount();
+		Main.map.get(roomtType).setCount(x-noOfRooms);
 	}
 	
-	public static void updatePrice(int price,String s) {
-		Main.map.get(s).setPrice(price);
+	public static void updatePrice(int price,String roomtType) {
+		Main.map.get(roomtType).setPrice(price);
 	}
 
 }
