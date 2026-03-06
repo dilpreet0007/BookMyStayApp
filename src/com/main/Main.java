@@ -7,13 +7,13 @@ import com.controller.Search;
 import com.inventory.Inventory;
 
 /*
-             ==========UC1==========
-   	Initialize room types (Single, Double, Suite)
-	Store room counts and prices
-	Support dynamic inventory updates
-	Provide real-time availability status
+ *
+    ==========UC2==========
+   	Display available room types
+	Show pricing and amenities
+	Prevent booking unavailable rooms
 	
-	@version 1.0
+	@version 2.0
 	@author Dilpreet
  */
 
