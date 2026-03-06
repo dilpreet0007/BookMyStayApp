@@ -5,6 +5,17 @@ import java.util.*;
 import com.controller.Controller;
 import com.inventory.Inventory;
 
+/*
+             ==========UC1==========
+   	Initialize room types (Single, Double, Suite)
+	Store room counts and prices
+	Support dynamic inventory updates
+	Provide real-time availability status
+	
+	@version 1.0
+	@author Dilpreet
+ */
+
 public class Main {
 	
 	public static HashMap<String,Inventory> map = new HashMap<>();
