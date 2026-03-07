@@ -9,14 +9,15 @@ import com.inventory.Inventory;
 
 /*
  *
-    ==========UC2==========
-   	Display available room types
-	Show pricing and amenities
-	Prevent booking unavailable rooms
+    ==========UC3==========
+   	Accept booking requests
+	Enforce arrival order
+	Handle high-traffic scenarios
 	
-	@version 2.0
+	@version 3.0
 	@author Dilpreet
  */
+
 
 public class Main {
 	
