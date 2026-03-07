@@ -8,12 +8,12 @@ import com.inventory.Inventory;
 
 /*
  *
-    ==========UC3==========
-   	Accept booking requests
-	Enforce arrival order
-	Handle high-traffic scenarios
+    ==========UC5==========
+   	Attach services (breakfast, spa, pickup)
+	Allow multiple services per booking
+	Calculate the additional cost
 	
-	@version 3.0
+	@version 5.0
 	@author Dilpreet
  */
 
