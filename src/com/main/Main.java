@@ -3,17 +3,19 @@ package com.main;
 import java.util.*;
 
 import com.booking.BookingRequest;
+import com.controller.BookingHistory;
+import com.controller.Cancel;
 import com.controller.Search;
 import com.inventory.Inventory;
 
 /*
  *
-    ==========UC3==========
-   	Accept booking requests
-	Enforce arrival order
-	Handle high-traffic scenarios
+    ==========UC5==========
+   	Attach services (breakfast, spa, pickup)
+	Allow multiple services per booking
+	Calculate the additional cost
 	
-	@version 3.0
+	@version 5.0
 	@author Dilpreet
  */
 
@@ -47,6 +49,7 @@ public class Main {
 		while(x!=0) {
 			System.out.print("Enter 1 to book room: ");
 			System.out.print("\nEnter 2 to search for different room: ");
+			System.out.print("\nEnter 3 to cancel room booking: ");
 			System.out.print("\nEnter 0 to exit: ");
 			x = sc.nextInt();
 			sc.nextLine();
@@ -75,11 +78,22 @@ public class Main {
 				roomType = sc.nextLine();
 				found = Search.searchRoom(roomType);
 			}
+			else if(x==3) {
+				System.out.print("Enter room ID: ");
+				String ID = sc.nextLine();
+				Cancel.cancelRoom(ID,roomType);
+				System.out.println("Room booking cancelled.");
+			}
 		}
 		
 		System.out.println("Booked rooms list: "+ bookedRooms);
 		System.out.println(assignedRooms);
 		System.out.println(Services);
+		System.out.println("Booking History Record: ");
+		
+		for(String s : BookingHistory.history) {
+			System.out.println(s);
+		}
 		
 		sc.close();
 	}
