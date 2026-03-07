@@ -8,12 +8,12 @@ import com.inventory.Inventory;
 
 /*
  *
-    ==========UC3==========
-   	Accept booking requests
-	Enforce arrival order
-	Handle high-traffic scenarios
+    ==========UC4==========
+   	Assign a unique room ID
+	Prevent reuse of room IDs
+	Update availability immediately
 	
-	@version 3.0
+	@version 4.0
 	@author Dilpreet
  */
 
