@@ -10,12 +10,12 @@ import com.inventory.Inventory;
 
 /*
  *
-    ==========UC5==========
-   	Attach services (breakfast, spa, pickup)
-	Allow multiple services per booking
-	Calculate the additional cost
+    ==========UC6==========
+   	Store confirmed reservations
+	Support cancellation & review
+	Generate reports
 	
-	@version 5.0
+	@version 6.0
 	@author Dilpreet
  */
 
@@ -81,8 +81,9 @@ public class Main {
 			else if(x==3) {
 				System.out.print("Enter room ID: ");
 				String ID = sc.nextLine();
-				Cancel.cancelRoom(ID,roomType);
-				System.out.println("Room booking cancelled.");
+				boolean roomCancelled = Cancel.cancelRoom(ID,roomType);
+				if(roomCancelled)System.out.println("Room booking cancelled.\n");
+				else System.out.println("Room Id wrong or not booked\n");
 			}
 		}
 		
