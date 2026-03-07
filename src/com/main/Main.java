@@ -22,6 +22,7 @@ public class Main {
 	public static HashMap<String,Inventory> map = new HashMap<>();
 	public static HashSet<String> bookedRooms = new HashSet<>();
 	public static HashMap<String,HashSet<String>> assignedRooms = new HashMap<>();
+	public static HashMap<String,ArrayList<String>> Services = new HashMap<>();
 
 	static {
 		map.put("Single",new Inventory(2000,5));
@@ -56,6 +57,17 @@ public class Main {
 			else if(x==1) {
 				if(found) {
 					BookingRequest.booking(roomType,user);
+					System.out.println("If Additional Services Required ? type Yes");
+					String serviceInput = sc.nextLine();
+					if(serviceInput.equals("Yes")) {
+						System.out.println("Breakfast || Spa || Pickup");
+						String services = sc.nextLine();
+						String[] arr = services.split(" ");
+						Services.put(roomType+(map.get(roomType).count+1), new ArrayList<>());
+						for(String sr : arr) {
+							Services.get(roomType+(map.get(roomType).count+1)).add(sr);
+						}
+					}
 				}
 			}
 			else if(x==2) {
@@ -67,6 +79,7 @@ public class Main {
 		
 		System.out.println("Booked rooms list: "+ bookedRooms);
 		System.out.println(assignedRooms);
+		System.out.println(Services);
 		
 		sc.close();
 	}
