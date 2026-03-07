@@ -3,7 +3,6 @@ package com.main;
 import java.util.*;
 
 import com.booking.BookingRequest;
-import com.controller.Controller;
 import com.controller.Search;
 import com.inventory.Inventory;
 
@@ -18,22 +17,28 @@ import com.inventory.Inventory;
 	@author Dilpreet
  */
 
-
 public class Main {
 	
 	public static HashMap<String,Inventory> map = new HashMap<>();
+	public static HashSet<String> bookedRooms = new HashSet<>();
+	public static HashMap<String,HashSet<String>> assignedRooms = new HashMap<>();
 
-	public static void main(String[] args) {
-		
+	static {
 		map.put("Single",new Inventory(2000,5));
 		map.put("Double",new Inventory(3000,3));
 		map.put("Suite",new Inventory(4000,2));
+		
+		assignedRooms.put("Single", new HashSet<>());
+		assignedRooms.put("Double", new HashSet<>());
+		assignedRooms.put("Suite", new HashSet<>());
+	}
+	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Enter your name: ");
 		String user = sc.nextLine();
-		System.out.print("Enter room type you want Single | Double | Suite: ");
+		System.out.println("Enter room type you want Single | Double | Suite: ");
 		String roomType = sc.nextLine();
 		boolean found = Search.searchRoom(roomType);
 		
@@ -52,15 +57,18 @@ public class Main {
 				if(found) {
 					BookingRequest.booking(roomType,user);
 				}
-				break;
 			}
 			else if(x==2) {
-				System.out.print("Enter room type you want Single | Double | Suite: \n");
+				System.out.println("Enter room type you want Single | Double | Suite:");
 				roomType = sc.nextLine();
 				found = Search.searchRoom(roomType);
 			}
 		}
-
+		
+		System.out.println("Booked rooms list: "+ bookedRooms);
+		System.out.println(assignedRooms);
+		
+		sc.close();
 	}
 
 }

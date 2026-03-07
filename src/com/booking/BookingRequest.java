@@ -9,7 +9,7 @@ import com.main.Main;
 public class BookingRequest {
     public static Queue<String> req = new LinkedList<>();
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-
+    
     public static void booking(String roomType, String user) {
         req.add(user);
         while (!req.isEmpty()) {
@@ -27,9 +27,12 @@ public class BookingRequest {
             System.out.println("Room not available");
             timeout.cancel(true);
         } else {
+        	Main.assignedRooms.get(roomType).add(roomType + "" + Main.map.get(roomType).count);
+        	Main.bookedRooms.add(roomType + "" + Main.map.get(roomType).count);
+        	System.out.println("Room with ID " + roomType + "" + Main.map.get(roomType).count +" booked successfully");
             Controller.DecRoomCount(1, roomType);
-            System.out.println("Room booked successfully");
             timeout.cancel(true);
         }
     }
 }
+;
