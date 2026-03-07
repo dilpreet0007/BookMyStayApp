@@ -20,9 +20,9 @@ public class Search {
 		else System.out.println(map.get(roomType).count+ " " + roomType +  " Room Available");
 		System.out.println();
 		
-		if(roomType == "Single") System.out.println(Amenities.singleRoom);
-		else if(roomType == "Double") System.out.println(Amenities.doubleRoom);
-		else if(roomType == "Suite") System.out.println(Amenities.suiteRoom);
+		if(roomType.equals("Single")) System.out.println(Amenities.singleRoom);
+		else if(roomType.equals("Double")) System.out.println(Amenities.doubleRoom);
+		else if(roomType.equals("Suite")) System.out.println(Amenities.suiteRoom);
 		
 		return true;
 	}

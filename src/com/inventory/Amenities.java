@@ -1,5 +1,7 @@
 package com.inventory;
 
+//Amenities added
+
 public class Amenities {
 	public static String singleRoom = "One single bed\r\n"
 									+ "\r\n"
